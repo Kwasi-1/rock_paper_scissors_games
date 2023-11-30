@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors game</title>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+
+    <button onclick="makeMove('Rock')">
+      ROCK
+    </button>
+    <button onclick="makeMove('Paper')">
+      PAPER
+    </button>
+    <button onclick="makeMove('Scissors')">
+      SCISSORS
+    </button>
+
+    <script>
+      function makeMove(playerMove){
+        const randomNumber= Math.random();
+        playerMove = 'Rock'
+        let computerMove;
+        
+        if(randomNumber >=0 && randomNumber < 1/3){
+          computerMove = 'Rock';
+        }else if(randomNumber >= 1/3 && randomNumber < 2/3){
+          computerMove = 'Paper';
+        }else{
+          computerMove = 'Scissors';
+        }
+        
+        if (computerMove === playerMove){
+          alert('tie');
+        }
+        else if(computerMove === 'Rock' && playerMove === 'Paper'){
+          alert(`You win. ${playerMove} is greater than ${computerMove}`);
+        }
+        else if(computerMove === 'Paper' && playerMove === 'Scissors'){
+          alert(`You win. ${playerMove} is greater than ${computerMove}`);
+        }
+        else if(computerMove === 'Rock' && playerMove === 'Paper'){
+          alert(`You win. ${playerMove} is greater than ${computerMove}`);
+        }else if(computerMove === 'Scissors' && playerMove === 'Rock'){
+          alert(`You win. ${playerMove} is greater than ${computerMove}`);
+        }else{
+          alert(`You loose. ${computerMove} is greater than ${playerMove}`)
+        }
+      }
+
+    </script>
+
+  </body>
+</html>
